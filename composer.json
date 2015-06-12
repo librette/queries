@@ -1,0 +1,14 @@
+{
+	"name": "librette/queries",
+	"require": {
+		"nette/utils": "~2.2"
+	},
+	"autoload": {
+		"psr-4": {
+			"Librette\\Queries\\": "src/"
+		},
+		"files": [
+			"src/exceptions.php"
+		]
+	}
+}
