@@ -4,13 +4,13 @@ namespace Librette\Queries;
 /**
  * @author David Matejka
  */
-interface IQueryHandler
+interface IQueryModifier
 {
 
 	/**
 	 * @param IQuery
-	 * @return mixed|IResultSet
+	 * @return void
 	 */
-	public function fetch(IQuery $query);
+	public function modify(IQuery $query);
 
 }
