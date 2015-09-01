@@ -31,7 +31,7 @@ class InternalQueryHandler extends Object implements IQueryHandler
 
 	public function fetch(IQuery $query)
 	{
-		$query->fetch(new InternalQueryable($this->queryHandlerAccessor->get()));
+		return $query->fetch(new InternalQueryable($this->queryHandlerAccessor->get()));
 	}
 
 }
