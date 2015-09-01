@@ -6,7 +6,8 @@
 	"require-dev": {
 		"tracy/tracy": "~2.2",
 		"nette/tester": "@dev",
-		"mockery/mockery": "0.9.*"
+		"mockery/mockery": "0.9.*",
+		"nette/di": "~2.2"
 	},
 	"autoload": {
 		"psr-4": {

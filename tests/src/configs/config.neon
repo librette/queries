@@ -1,0 +1,5 @@
+extensions:
+	queries: Librette\Queries\DI\QueriesExtension
+services:
+	- {class: LibretteTests\Queries\Mocks\QueryHandler, tags: [librette.queries.handler]}
+	- {class: LibretteTests\Queries\Mocks\QueryModifier, tags: [librette.queries.modifier]}
