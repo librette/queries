@@ -3,6 +3,11 @@
 	"require": {
 		"nette/utils": "~2.2"
 	},
+	"require-dev": {
+		"tracy/tracy": "~2.2",
+		"nette/tester": "@dev",
+		"mockery/mockery": "0.9.*"
+	},
 	"autoload": {
 		"psr-4": {
 			"Librette\\Queries\\": "src/"
