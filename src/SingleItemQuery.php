@@ -42,5 +42,4 @@ class SingleItemQuery extends Object implements IQuery, IOuterQuery
 		return $items ? reset($items) : NULL;
 	}
 
-
 }
