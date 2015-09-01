@@ -1,5 +1,8 @@
 <?php
-namespace Librette\Queries;
+namespace Librette\Queries\Internal;
+
+use Librette\Queries\IQueryable;
+use Librette\Queries\IQueryHandler;
 
 /**
  * @author David Matejka

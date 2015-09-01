@@ -10,33 +10,18 @@ class MainQueryHandler extends Object implements IQueryHandler
 {
 
 	/** @var IQueryHandler[] */
-	private $typeHandlers = [];
-
-	private $classHandlers = [];
+	private $handlers = [];
 
 	/** @var IQueryModifier[] */
 	private $modifiers = [];
 
 
 	/**
-	 * @param string
 	 * @param IQueryHandler
 	 */
-	public function addTypeHandler($type, IQueryHandler $handler)
+	public function addHandler(IQueryHandler $handler)
 	{
-		$this->typeHandlers[$type] = $handler;
-	}
-
-
-	/**
-	 * @param IQueryHandler
-	 */
-	public function addClassHandler(IQueryClassHandler $handler)
-	{
-		foreach ($handler->getSupportedClasses() as $class) {
-			$class = ltrim(strtolower($class), '\\');
-			$this->classHandlers[$class] = $handler;
-		}
+		$this->handlers[] = $handler;
 	}
 
 
@@ -49,6 +34,18 @@ class MainQueryHandler extends Object implements IQueryHandler
 	}
 
 
+	public function supports(IQuery $query)
+	{
+		foreach ($this->handlers as $handler) {
+			if ($handler->supports($query)) {
+				return TRUE;
+			}
+		}
+
+		return FALSE;
+	}
+
+
 	/**
 	 * @param IQuery
 	 * @return mixed|IResultSet
@@ -56,11 +53,12 @@ class MainQueryHandler extends Object implements IQueryHandler
 	public function fetch(IQuery $query)
 	{
 		$handler = NULL;
-		if (isset($this->classHandlers[$cls = strtolower(get_class($query))])) {
-			$handler = $this->classHandlers[$cls];
-		} elseif ($query instanceof IQueryType && isset($this->typeHandlers[$type = $query->getQueryType()])) {
-			$handler = $this->typeHandlers[$type];
-		} elseif (!$query instanceof IOuterQuery) {
+		foreach ($this->handlers as $handler) {
+			if ($handler->supports($query)) {
+				break;
+			}
+		}
+		if ($handler === NULL) {
 			throw new InvalidArgumentException("Unsupported query.");
 		}
 
@@ -68,7 +66,7 @@ class MainQueryHandler extends Object implements IQueryHandler
 			$modifier->modify($query);
 		}
 
-		return $handler ? $handler->fetch($query) : $query->fetch(new InternalQueryable($this));
+		return $handler->fetch($query);
 	}
 
 }
