@@ -52,12 +52,7 @@ class MainQueryHandler extends Object implements IQueryHandler
 	 */
 	public function fetch(IQuery $query)
 	{
-		$handler = NULL;
-		foreach ($this->handlers as $handler) {
-			if ($handler->supports($query)) {
-				break;
-			}
-		}
+		$handler = $this->resolveHandler($query);
 		if ($handler === NULL) {
 			throw new InvalidArgumentException("Unsupported query.");
 		}
@@ -69,4 +64,15 @@ class MainQueryHandler extends Object implements IQueryHandler
 		return $handler->fetch($query);
 	}
 
+
+	private function resolveHandler(IQuery $query)
+	{
+		foreach ($this->handlers as $handler) {
+			if ($handler->supports($query)) {
+				return $handler;
+			}
+		}
+
+		return NULL;
+	}
 }
