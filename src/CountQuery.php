@@ -13,6 +13,9 @@ class CountQuery extends Object implements IQuery, IOuterQuery
 	private $query;
 
 
+	/**
+	 * @param IResultSetQuery
+	 */
 	public function __construct(IResultSetQuery $query)
 	{
 		$this->query = $query;

@@ -17,6 +17,9 @@ class InternalQueryHandler extends Object implements IQueryHandler
 	private $queryHandlerAccessor;
 
 
+	/**
+	 * @param IQueryHandlerAccessor
+	 */
 	public function __construct(IQueryHandlerAccessor $queryHandlerAccessor)
 	{
 		$this->queryHandlerAccessor = $queryHandlerAccessor;
