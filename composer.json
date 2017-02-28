@@ -1,5 +1,6 @@
 {
 	"name": "librette/queries",
+	"license": ["BSD-3-Clause", "GPL-2.0", "GPL-3.0"],
 	"require": {
 		"nette/utils": "~2.2"
 	},
