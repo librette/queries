@@ -16,7 +16,7 @@ interface IQueryHandler
 
 	/**
 	 * @param IQuery
-	 * @return mixed|IResultSet
+	 * @return mixed
 	 */
 	public function fetch(IQuery $query);
 
