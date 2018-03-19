@@ -2,13 +2,13 @@
 	"name": "librette/queries",
 	"license": ["BSD-3-Clause", "GPL-2.0", "GPL-3.0"],
 	"require": {
-		"nette/utils": "~2.2"
+		"nette/utils": "~2.4"
 	},
 	"require-dev": {
-		"tracy/tracy": "~2.2",
+		"tracy/tracy": "~2.4",
 		"nette/tester": "@dev",
 		"mockery/mockery": "0.9.*",
-		"nette/di": "~2.2"
+		"nette/di": "~2.4"
 	},
 	"autoload": {
 		"psr-4": {
