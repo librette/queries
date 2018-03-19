@@ -1,14 +1,17 @@
 <?php
+
 namespace Librette\Queries\Internal;
 
 use Librette\Queries\IQueryable;
 use Librette\Queries\IQueryHandler;
+use Nette\SmartObject;
 
 /**
  * @author David Matejka
  */
 class InternalQueryable implements IQueryable
 {
+	use SmartObject;
 
 	/** @var IQueryHandler */
 	private $queryHandler;

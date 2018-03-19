@@ -1,13 +1,15 @@
 <?php
+
 namespace Librette\Queries;
 
-use Nette\Object;
+use Nette\SmartObject;
 
 /**
  * @author David Matejka
  */
-class SingleItemQuery extends Object implements IQuery, IOuterQuery
+class SingleItemQuery implements IQuery, IOuterQuery
 {
+	use SmartObject;
 
 	/** @var IResultSetQuery */
 	private $query;

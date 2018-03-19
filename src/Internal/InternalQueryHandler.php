@@ -1,17 +1,19 @@
 <?php
+
 namespace Librette\Queries\Internal;
 
 use Librette\Queries\IOuterQuery;
 use Librette\Queries\IQuery;
 use Librette\Queries\IQueryHandler;
 use Librette\Queries\IQueryHandlerAccessor;
-use Nette\Object;
+use Nette\SmartObject;
 
 /**
  * @author David Matejka
  */
-class InternalQueryHandler extends Object implements IQueryHandler
+class InternalQueryHandler implements IQueryHandler
 {
+	use SmartObject;
 
 	/** @var IQueryHandlerAccessor */
 	private $queryHandlerAccessor;

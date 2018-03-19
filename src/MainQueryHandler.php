@@ -1,13 +1,15 @@
 <?php
+
 namespace Librette\Queries;
 
-use Nette\Object;
+use Nette\SmartObject;
 
 /**
  * @author David Matejka
  */
-class MainQueryHandler extends Object implements IQueryHandler
+class MainQueryHandler implements IQueryHandler
 {
+	use SmartObject;
 
 	/** @var IQueryHandler[] */
 	private $handlers = [];
