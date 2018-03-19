@@ -1,4 +1,5 @@
-<?php
+<?php declare(strict_types = 1);
+
 namespace Librette\Queries;
 
 use Nette\Utils\Paginator;
