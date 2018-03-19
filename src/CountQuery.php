@@ -4,9 +4,6 @@ namespace Librette\Queries;
 
 use Nette\SmartObject;
 
-/**
- * @author David Matejka
- */
 class CountQuery implements IQuery, IOuterQuery
 {
 	use SmartObject;

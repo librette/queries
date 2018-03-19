@@ -2,9 +2,6 @@
 
 namespace Librette\Queries;
 
-/**
- * @author David Matejka
- */
 interface IQueryModifier
 {
 	public function modify(IQuery $query): void;

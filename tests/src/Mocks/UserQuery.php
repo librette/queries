@@ -6,9 +6,6 @@ use Librette\Queries\IQueryable;
 use Librette\Queries\IResultSet;
 use Librette\Queries\IResultSetQuery;
 
-/**
- * @author David Matejka
- */
 class UserQuery implements IResultSetQuery
 {
 
@@ -16,5 +13,4 @@ class UserQuery implements IResultSetQuery
 	{
 		return new ResultSet([['name' => 'John'], ['name' => 'Jack']]);
 	}
-
 }

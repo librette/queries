@@ -8,9 +8,6 @@ use Librette\Queries\IQueryHandler;
 use Librette\Queries\IQueryHandlerAccessor;
 use Nette\SmartObject;
 
-/**
- * @author David Matejka
- */
 class InternalQueryHandler implements IQueryHandler
 {
 	use SmartObject;

@@ -7,8 +7,6 @@ use Nette\Utils\Paginator;
 
 /**
  * Lazy collection
- *
- * @author David Matejka
  */
 interface IResultSet extends \Traversable, \Countable
 {

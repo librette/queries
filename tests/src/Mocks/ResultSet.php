@@ -4,9 +4,6 @@ namespace LibretteTests\Queries\Mocks;
 use Librette\Queries\IResultSet;
 use Nette\Utils\Paginator;
 
-/**
- * @author David Matejka
- */
 class ResultSet implements \IteratorAggregate, IResultSet
 {
 	/** @var array */

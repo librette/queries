@@ -7,9 +7,6 @@ use Librette\Queries\IQueryHandlerAccessor;
 use Librette\Queries\MainQueryHandler;
 use Nette\DI\CompilerExtension;
 
-/**
- * @author David Matejka
- */
 class QueriesExtension extends CompilerExtension
 {
 

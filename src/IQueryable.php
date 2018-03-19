@@ -2,9 +2,6 @@
 
 namespace Librette\Queries;
 
-/**
- * @author David Matejka
- */
 interface IQueryable
 {
 	public function getHandler(): IQueryHandler;

@@ -2,9 +2,6 @@
 
 namespace Librette\Queries;
 
-/**
- * @author David Matejka
- */
 interface IOuterQuery extends IQuery
 {
 	public function getInnerQuery(): IQuery;

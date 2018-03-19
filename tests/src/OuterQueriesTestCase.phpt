@@ -17,7 +17,6 @@ require_once __DIR__ . '/../bootstrap.php';
 
 
 /**
- * @author David Matějka
  * @testCase
  */
 class OuterQueriesTestCase extends Tester\TestCase

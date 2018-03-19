@@ -2,9 +2,6 @@
 
 namespace Librette\Queries;
 
-/**
- * @author David Matejka
- */
 interface IQueryHandler
 {
 	public function supports(IQuery $query): bool;

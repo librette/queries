@@ -5,9 +5,6 @@ use Librette\Queries\IQuery;
 use Librette\Queries\IQueryable;
 use Librette\Queries\IQueryHandler;
 
-/**
- * @author David Matejka
- */
 class QueryHandler implements IQueryHandler
 {
 
