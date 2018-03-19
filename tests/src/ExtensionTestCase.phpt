@@ -30,7 +30,7 @@ class ExtensionTestCase extends Tester\TestCase
 	public function testConfig()
 	{
 		$loader = new Nette\DI\ContainerLoader(TEMP_DIR);
-		$cls = $loader->load('', function (Nette\DI\Compiler $compiler) {
+		$cls = $loader->load(function (Nette\DI\Compiler $compiler) {
 			$compiler->addExtension('extensions', new Nette\DI\Extensions\ExtensionsExtension());
 			$compiler->loadConfig(__DIR__ . '/configs/config.neon');
 		});
