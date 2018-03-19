@@ -7,10 +7,5 @@ namespace Librette\Queries;
  */
 interface IOuterQuery extends IQuery
 {
-
-	/**
-	 * @return IQuery
-	 */
-	public function getInnerQuery();
-
+	public function getInnerQuery(): IQuery;
 }

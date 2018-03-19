@@ -7,11 +7,8 @@ namespace Librette\Queries;
  */
 interface IQuery
 {
-
 	/**
-	 * @param IQueryable
 	 * @return mixed
 	 */
 	public function fetch(IQueryable $queryable);
-
 }

@@ -12,27 +12,9 @@ use Nette\Utils\Paginator;
  */
 interface IResultSet extends \Traversable, \Countable
 {
+	public function applyPaginator(Paginator $paginator): self;
 
-	/**
-	 * @param Paginator
-	 * @throws InvalidStateException
-	 * @return self
-	 */
-	public function applyPaginator(Paginator $paginator);
+	public function applyPaging(int $offset, int $limit): self;
 
-
-	/**
-	 * @param int
-	 * @param int
-	 * @throws InvalidStateException
-	 * @return self
-	 */
-	public function applyPaging($offset, $limit);
-
-
-	/**
-	 * @return int
-	 */
-	public function getTotalCount();
-
+	public function getTotalCount(): int;
 }

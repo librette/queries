@@ -21,17 +21,13 @@ class SingleItemQuery implements IQuery, IOuterQuery
 	}
 
 
-	/**
-	 * @return IQuery
-	 */
-	public function getInnerQuery()
+	public function getInnerQuery(): IQuery
 	{
 		return $this->query;
 	}
 
 
 	/**
-	 * @param IQueryable
 	 * @return mixed|null
 	 */
 	public function fetch(IQueryable $queryable)
@@ -43,5 +39,4 @@ class SingleItemQuery implements IQuery, IOuterQuery
 
 		return $items ? reset($items) : NULL;
 	}
-
 }

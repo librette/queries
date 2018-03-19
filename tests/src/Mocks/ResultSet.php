@@ -22,20 +22,22 @@ class ResultSet implements \IteratorAggregate, IResultSet
 	}
 
 
-	public function applyPaginator(Paginator $paginator)
+	public function applyPaginator(Paginator $paginator): IResultSet
 	{
 		$this->applyPaging($paginator->getOffset(), $paginator->getLength());
 		$paginator->setItemsPerPage($this->getTotalCount());
+		return $this;
 	}
 
 
-	public function applyPaging($offset, $limit)
+	public function applyPaging(int $offset, int $limit): IResultSet
 	{
 		$this->paginated = array_slice($this->data, $offset, $limit);
+		return $this;
 	}
 
 
-	public function getTotalCount()
+	public function getTotalCount(): int
 	{
 		return count($this->data);
 	}

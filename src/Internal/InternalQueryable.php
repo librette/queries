@@ -23,12 +23,8 @@ class InternalQueryable implements IQueryable
 	}
 
 
-	/**
-	 * @return IQueryHandler
-	 */
-	public function getHandler()
+	public function getHandler(): IQueryHandler
 	{
 		return $this->queryHandler;
 	}
-
 }

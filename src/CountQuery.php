@@ -15,33 +15,22 @@ class CountQuery implements IQuery, IOuterQuery
 	private $query;
 
 
-	/**
-	 * @param IResultSetQuery
-	 */
 	public function __construct(IResultSetQuery $query)
 	{
 		$this->query = $query;
 	}
 
 
-	/**
-	 * @return IQuery
-	 */
-	public function getInnerQuery()
+	public function getInnerQuery(): IQuery
 	{
 		return $this->query;
 	}
 
 
-	/**
-	 * @param IQueryable
-	 * @return int
-	 */
-	public function fetch(IQueryable $queryable)
+	public function fetch(IQueryable $queryable): int
 	{
 		$result = $queryable->getHandler()->fetch($this->query);
 
 		return $result->getTotalCount();
 	}
-
 }

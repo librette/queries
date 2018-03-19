@@ -7,18 +7,10 @@ namespace Librette\Queries;
  */
 interface IQueryHandler
 {
+	public function supports(IQuery $query): bool;
 
 	/**
-	 * @param IQuery
-	 * @return bool
-	 */
-	public function supports(IQuery $query);
-
-
-	/**
-	 * @param IQuery
 	 * @return mixed
 	 */
 	public function fetch(IQuery $query);
-
 }

@@ -28,7 +28,7 @@ class InternalQueryHandler implements IQueryHandler
 	}
 
 
-	public function supports(IQuery $query)
+	public function supports(IQuery $query): bool
 	{
 		return $query instanceof IOuterQuery;
 	}
@@ -38,5 +38,4 @@ class InternalQueryHandler implements IQueryHandler
 	{
 		return $query->fetch(new InternalQueryable($this->queryHandlerAccessor->get()));
 	}
-
 }

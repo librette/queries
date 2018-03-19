@@ -7,10 +7,5 @@ namespace Librette\Queries;
  */
 interface IQueryable
 {
-
-	/**
-	 * @return IQueryHandler
-	 */
-	public function getHandler();
-
+	public function getHandler(): IQueryHandler;
 }

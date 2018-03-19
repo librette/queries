@@ -18,25 +18,19 @@ class MainQueryHandler implements IQueryHandler
 	private $modifiers = [];
 
 
-	/**
-	 * @param IQueryHandler
-	 */
-	public function addHandler(IQueryHandler $handler)
+	public function addHandler(IQueryHandler $handler): void
 	{
 		$this->handlers[] = $handler;
 	}
 
 
-	/**
-	 * @param IQueryModifier
-	 */
-	public function addModifier(IQueryModifier $queryModifier)
+	public function addModifier(IQueryModifier $queryModifier): void
 	{
 		$this->modifiers[] = $queryModifier;
 	}
 
 
-	public function supports(IQuery $query)
+	public function supports(IQuery $query): bool
 	{
 		foreach ($this->handlers as $handler) {
 			if ($handler->supports($query)) {
@@ -49,7 +43,6 @@ class MainQueryHandler implements IQueryHandler
 
 
 	/**
-	 * @param IQuery
 	 * @return mixed|IResultSet
 	 */
 	public function fetch(IQuery $query)
@@ -67,7 +60,7 @@ class MainQueryHandler implements IQueryHandler
 	}
 
 
-	private function resolveHandler(IQuery $query)
+	private function resolveHandler(IQuery $query): ?IQueryHandler
 	{
 		foreach ($this->handlers as $handler) {
 			if ($handler->supports($query)) {
