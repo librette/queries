@@ -4,13 +4,14 @@
 	"type": "library",
 	"require": {
 		"php": ">=7.1",
-		"nette/utils": "~2.4"
+		"nette/utils": "~2.4 || ~3.0"
 	},
 	"require-dev": {
 		"tracy/tracy": "~2.4",
 		"nette/tester": "@dev",
 		"mockery/mockery": "0.9.*",
-		"nette/di": "~2.4"
+		"nette/di": "~2.4",
+		"phpstan/phpstan": "^0.12.11"
 	},
 	"autoload": {
 		"psr-4": {
